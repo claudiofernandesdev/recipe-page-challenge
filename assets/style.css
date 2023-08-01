@@ -1,0 +1,386 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--black-color: #000;
+	--grey-color: #333;
+	--medium-grey-color: #4f4f4f;
+	--light-grey-color: #828282;
+    --light-grey-color2: #bdbdbd;
+
+	--white-color: #fff;
+	--orange-color: #f2994a;
+
+	--title-text-font: 'Playfair Display', serif;
+	--body-text-font: 'Montserrat', sans-serif;
+}
+
+body {
+	width: 80%;
+	margin: 0 auto;
+	background: var(--white-color);
+	font-family: var(--body-text-font);
+}
+
+header h1 {
+	color: var(--black-color);
+	font-family: var(--title-text-font);
+	font-size: 3rem;
+	font-weight: 700;
+	line-height: 4rem;
+	padding-top: 3rem;
+	padding-bottom: 1.5rem;
+}
+
+header div {
+	display: flex;
+	align-items: baseline;
+}
+
+header p {
+	color: var(--medium-grey-color);
+	font-size: 0.875rem;
+	font-weight: 500;
+	font-style: italic;
+	width: 37rem;
+	padding-left: 0.5rem;
+	padding-bottom: 2rem;
+}
+
+.hero img {
+	width: 100%;
+	border-radius: 0.75rem;
+	padding-bottom: 2rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+main {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.recipe {
+	color: var(--grey-color);
+    max-width: 40rem;
+}
+
+.title {
+	font-family: var(--title-text-font);
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding: 1rem 0;
+    color: var(--grey-color);
+}
+
+.subtitle {
+	font-family: var(--title-text-font);
+	font-size: 1.125rem;
+	font-weight: 400;
+	font-style: italic;
+	padding: 1.5rem 0;
+}
+
+.container {
+	display: block;
+	position: relative;
+	padding-left: 2.25rem;
+	margin-bottom: 0.75rem;
+	cursor: pointer;
+	font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1.25rem;
+	width: 1.25rem;
+	border: 1px solid var(--grey-color);
+	border-radius: 0.25rem;
+	background-color: var(--white-color);
+    transition: all .3s ease-in-out;
+}
+
+.container:hover input ~ .checkmark {
+	background-color: var(--light-grey-color2);
+	border: none;
+}
+
+.container input:checked ~ .checkmark {
+	background-color: #f2994a;
+	border: none;
+}
+
+.checkmark:after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+	display: block;
+}
+
+.container .checkmark:after {
+	left: 0.5rem;
+	top: 0.25rem;
+	width: 0.25rem;
+	height: 0.5rem;
+	border: solid white;
+	border-width: 0 0.125rem 0.125rem 0;
+	transform: rotate(45deg);
+}
+
+.container:last-child {
+	width: 37rem;
+    padding-bottom: 2rem;
+}
+
+.instructions-details {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    line-height: 1.5rem;
+}
+
+.instructions-details .order h3 {
+    font-family: var(--title-text-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--white-color);
+    background: var(--orange-color);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+}
+
+.other-infos {
+    display: flex;
+    flex-direction: column;
+    width: 13.5rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.yields {
+    font-family: var(--body-text-font);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2.5rem;
+}
+
+.yields .icon {
+    font-size: 2.125rem;
+    font-weight: bold;
+    color: var(--orange-color);
+}
+
+.yields .title-card {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: var(--light-grey-color);
+    padding-bottom: 0.25rem;
+    text-transform: uppercase;
+}
+
+.yields  .description {
+    font-size: 0.725rem;
+    font-weight: 500;
+    color: var(--orange-color);
+}
+
+.times {
+    display: flex;
+    flex-direction: column;
+}
+
+.times-details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2.5rem;
+}
+
+.times-details:last-child {
+    padding-bottom: 0;
+} 
+
+.times .icon {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--grey-color);
+}
+
+.times .times-details .title-card {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: var(--light-grey-color);
+    padding-bottom: 0.25rem;
+    text-transform: uppercase;
+}
+
+.times .times-details .description {
+    font-size: 0.725rem;
+    font-weight: 500;
+    color: var(--grey-color);
+}
+
+.source {
+    font-style: italic;
+    color: var(--light-grey-color2);
+    padding: 1.5rem 0;
+}
+
+footer p {
+	height: 4.5rem;
+	color: var(--light-grey-color);
+	font-family: var(--body-text-font);
+	font-size: 1rem;
+	font-weight: 500;
+	padding: 2rem 0;
+	text-align: center;
+}
+
+footer p span a {
+	color: var(--grey-color-text);
+	font-weight: 700;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        padding: 0rem;
+    }
+
+    header p {
+        width: 100%;
+        font-size: 0.75rem;
+    }
+
+    .hero img {
+        padding-bottom: 1rem;
+    }
+
+    main {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 1.125rem;
+        padding: 1rem 0;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .container {
+        font-size: 0.875rem;
+    }
+
+    .container:last-child {
+        width: 100%;
+    }
+
+    .other-infos {
+        width: 100%;
+        padding: .75rem;
+        margin-top: 1rem;
+    }
+
+    .yields {
+        gap: 0;
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    .yields .icon {
+        font-size: 1.125rem;
+        gap: 1rem;
+        padding-right: 1rem;
+    }
+
+    .yields .title-card {
+        font-size: 0.5rem;
+    }
+
+    .yields .description,
+    .times-details .title-card  {
+        font-size: 0.625rem;
+    }
+
+    .times {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .times-details {
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .times-details:last-child {
+        padding-bottom: 1rem;
+    }
+
+    .times .times-details .title-card  {
+        font-size: 0.5rem;
+    }
+
+    .times .times-details .description {
+        font-size: 0.625rem;
+    }
+
+    .recipe {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .instructions-details {
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .source {
+        font-size: 0.75rem;
+    }
+
+    footer p,
+	footer span a {
+		font-size: 0.65rem;
+	}
+}
+
+
+
